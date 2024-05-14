@@ -1,0 +1,125 @@
+{
+	"info": {
+		"_postman_id": "20b350b7-1a71-41de-927f-1a5b5de35adf",
+		"name": "stock-tracker",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "15068460"
+	},
+	"item": [
+		{
+			"name": "/api/stock-data/bulk-insert",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": "/Users/nivruthnandigam/Downloads/dow_jones_index.data"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8080/st/api/stock-data/bulk-insert",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"st",
+						"api",
+						"stock-data",
+						"bulk-insert"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/api/stock-data/AA",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8080/st/api/stock-data/AA",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"st",
+						"api",
+						"stock-data",
+						"AA"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/api/stock-data/",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"quarter\": 2,\n    \"stock\": \"ZZ\",\n    \"date\": \"4/8/2011\",\n    \"open\": \"$17.42\",\n    \"high\": \"$18.47\",\n    \"low\": \"$17.42\",\n    \"close\": \"$17.92\",\n    \"volume\": 1.29237024E8,\n    \"percent_change_price\": 2.87026,\n    \"percent_change_volume_over_last_wk\": 25.08374823,\n    \"previous_weeks_volume\": 1.03320396E8,\n    \"next_weeks_open\": \"$18.06\",\n    \"next_weeks_close\": \"$16.52\",\n    \"percent_change_next_weeks_price\": -8.52713,\n    \"days_to_next_dividend\": 34.0,\n    \"percent_return_next_dividend\": 0.167411\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8080/st/api/stock-data/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"st",
+						"api",
+						"stock-data",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					"pm.request.headers.add(\"x-client_id: abc123\");",
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
